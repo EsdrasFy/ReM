@@ -54,7 +54,7 @@ header > div span {
   position: absolute;
   width: 60px;
   height: 2px;
-  left: -5%;
+  left: 40%;
   bottom: -10px;
   background-color: #fff;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.075);
@@ -178,7 +178,18 @@ main {
     max-width: 90px;
     width: 100%;
   }
-  .grid{
+  .face {
+    border: 2px solid #ed145b;
+  }
+  .grid {
     margin: 0 10px;
+  }
+}
+@media (max-width: 420px) {
+  header > div span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ed145b;
   }
 }
