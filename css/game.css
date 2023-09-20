@@ -1,200 +1,184 @@
-:root{
-    --card-back: url(../images/images.png);
-    --card-front: url(../images/morty.png)
+:root {
+  --card-back: url(../images/images.png);
+  --card-front: url(../images/morty.png);
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-body{
-    height: 100vh;
-    background: url(../images/pxfuel.jpg) no-repeat;
-    background-size: cover;
-    background-position: center right;
-
-    margin-top: 2%;
-    overflow: hidden;
-    position: relative;
+body {
+  height: 100vh;
+  background-color: #1d2024;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 800px;
-    padding: 0px 15px 0px 15px;
-    margin: 0 auto;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.card{
-    aspect-ratio: 3/4;
-    width: 100%;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.075);
-    position: relative;
-    transition: all 400ms ease; 
-    transform-style: preserve-3d;
+header > div {
+  display: flex;
+  width: 778px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 20px;
 }
-.revel-card{
-    transform: rotateY(180deg);
+header > div span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ed145b;
 }
-.disabled-card{
-    filter: saturate(1);
-    opacity: 0.5;
-    
+#clock {
+  position: relative;
 }
-.face{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-size: cover;
-    background-position: center top;
-    border-width: 5px;
-    border-style: solid;
-    border-image: linear-gradient(to top, darkblue, darkorchid) 1;
-    border-radius: 5px;
-    transition: all 600ms ease;
-   
+#clock:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  left: 25%;
+  bottom: -10px;
+  background-color: #fff;
 }
-.front{
-    background-image: ;
-    
+#timer {
+  color: #fff;
 }
-.back{
-    background-image: var(--card-back);
-    backface-visibility: hidden;
+#nick {
+  position: relative;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 770px;
-  
-    background-color: aliceblue;
-
-    padding: 15px 10px;
-    margin: 20px auto 20px auto;
-    border-radius: 5px;
-    border-width: 5px;
-    border-style: solid;
-    border-image: linear-gradient(to top, darkblue, darkorchid) 1;
-    border-radius: 5px;
-    
-    background: rgba(255, 255, 255, 0.534);
-    box-shadow: 0 8px 32px 0 rgba(163, 169, 247, 0.445);
-    backdrop-filter: blur( 13.5px );
-    -webkit-backdrop-filter: blur(13.5px);
-    
-    font-size: 20px;
+#nick:before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  left: -5%;
+  bottom: -10px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.075);
 }
-#span{
-    
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
 }
-#modall{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    background: rgba(255, 255, 255, 0.295);
-    box-shadow: 0 8px 32px 0 rgba(163, 169, 247, 0.219);
-    backdrop-filter: blur( 9.5px );
-    -webkit-backdrop-filter: blur(9.5px);
-
-    border: 5px solid #a1a1a1;
-    border-radius: 5px;
-
-    padding: 50px 20px;
-    line-height: 25px;
-
-    transition: all ease 0.5s;
-    animation: inherit;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0 20px;
 }
-#modall p{
-    background-color: #a1a1a1;
-    padding: 5px 0px 0px 8px;
+.card {
+  aspect-ratio: 3/4;
+  border-radius: 5px;
+  max-width: 170px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.075);
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
 }
-#timer-modal{
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    width: auto;
-    max-width: 100px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #a1a1a1;
-    padding: 5px 8px 0px 8px;
-
+.revel-card {
+  transform: rotateY(180deg);
+}
+.disabled-card {
+  filter: saturate(1);
+  opacity: 0.5;
+}
+.face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center top;
+  border: 3px solid #ed145b;
+  border-radius: 5px;
+  transition: all 600ms ease;
+}
+.back {
+  background-image: var(--card-back);
+  backface-visibility: hidden;
 }
 
-#spantres{
-    display: flex;
-    justify-content: space-around;
+#span {
 }
-#modall button{
-    padding: 15px;
-    margin-top: 25px;
-    border: #d1d1d1 solid 4px;
-    border-radius: 5px;
+#modall {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    background: #a1a1a1;
+  background: rgba(255, 255, 255, 0.295);
+  box-shadow: 0 8px 32px 0 rgba(163, 169, 247, 0.219);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
 
-    cursor: pointer;
-    transition:7ms;
-    
+  border: 5px solid #a1a1a1;
+  border-radius: 5px;
+
+  padding: 50px 20px;
+  line-height: 25px;
+
+  transition: all ease 0.5s;
+  animation: inherit;
 }
-#modall button:hover{
+#modall p {
+  background-color: #a1a1a1;
+  padding: 5px 0px 0px 8px;
+}
+#timer-modal {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  width: auto;
+  max-width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #a1a1a1;
+  padding: 5px 8px 0px 8px;
+}
+
+#spantres {
+  display: flex;
+  justify-content: space-around;
+}
+#modall button {
+  padding: 15px;
+  margin-top: 25px;
+  border: #d1d1d1 solid 4px;
+  border-radius: 5px;
+
+  background: #a1a1a1;
+
+  cursor: pointer;
+  transition: 7ms;
+}
+#modall button:hover {
   background-color: #a1a1a1;
   border: solid rgb(126, 126, 126);
-  
 }
 
-@media (max-width: 850px){
-    .grid{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .card{
-        aspect-ratio: 7/8;
-    }
-    .face{
-        background-position: center bottom;
-    }
-
+@media (max-width: 780px) {
+  .card {
+    max-width: 130px;
+    width: 100%;
+  }
 }
-@media (max-width: 790px){
-   
-    header{
-        max-width: none;
-        width: 95%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-    .face{
-        background-position: top center;
-    }
-    .back{
-        background-position: center  ;
-    }
-    .card{
-        aspect-ratio: 4/5;
-    }
-    #modall button:first-child{
-        margin-right: 30px;
-    }
-}
-@media (max-width: 790px){
-    header{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    #clock{
-        display: flex;
-        justify-content: end;
-       font-size: 13px; !important;
-    }
-    #tempo{
-        display: flex;
-        justify-content: space-between;
-        max-width: 100%;
-        width: 100%;
-    }
+@media (max-width: 480px) {
+  .card {
+    max-width: 90px;
+    width: 100%;
+  }
+  .grid{
+    margin: 0 10px;
+  }
 }
